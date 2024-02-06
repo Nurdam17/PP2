@@ -41,7 +41,6 @@ r = Rectangle(a, b)
 print(r.area())
 
 #Task4():
-import math
 class Point():
     def __init__(self, x, y):
         self.x = x
@@ -51,7 +50,9 @@ class Point():
         return self.x, self.y
     
     def move(self, a, b):
-        return self.x + a, self.y + b
+        self.x += a
+        self.y += b
+        return self.x, self.y
     
     def dist(self, c, d):
         dx = self.x - c
