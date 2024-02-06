@@ -69,8 +69,15 @@ print(has_33([1, 3, 1, 3]))
 print(has_33([1, 3, 1]))
 
 #Task8():
-def spy_game(arr):
-    return '0' and '0' and '7' in ''.join(str(i) for i in arr)
+def spy_game(nums):
+    check = [0, 0, 7]
+
+    for num in nums:
+        if num == check[0]:
+            check.pop(0)
+            if not check:
+                return True
+    return False
 
 print(spy_game([1,2,4,0,0,7,5]))
 print(spy_game([1,0,2,4,0,5,7]))
